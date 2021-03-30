@@ -1,10 +1,9 @@
 import './home.scss';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { connect } from 'react-redux';
-import { Row, Col, Alert } from 'reactstrap';
+import { Alert, Col, Row } from 'reactstrap';
 
 export type IHomeProp = StateProps;
 
@@ -17,63 +16,56 @@ export const Home = (props: IHomeProp) => {
         <span className="hipster rounded" />
       </Col>
       <Col md="9">
-        <h2>Welcome, Java Hipster!</h2>
-        <p className="lead">This is your homepage</p>
+        <h2>Welcome to Demo Project for Appcent Job Interview.</h2>
+        <p className="lead">Simple To-Do List Application</p>
         {account && account.login ? (
           <div>
             <Alert color="success">You are logged in as user {account.login}.</Alert>
           </div>
         ) : (
           <div>
-            <Alert color="warning">
-              If you want to
-              <span>&nbsp;</span>
-              <Link to="/login" className="alert-link">
-                {' '}
-                sign in
-              </Link>
-              , you can try the default accounts:
-              <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-              <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-            </Alert>
+            It is a list application where you can write and save your daily work or information you do not want to lose. You can log in to
+            your account in the upper right corner and start using this application!
+            <br></br>
+            <br></br>
           </div>
         )}
-        <p>If you have any question on JHipster:</p>
-
-        <ul>
-          <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              JHipster homepage
-            </a>
-          </li>
-          <li>
-            <a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              JHipster on Stack Overflow
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              JHipster bug tracker
-            </a>
-          </li>
-          <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              JHipster public chat room
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              follow @jhipster on Twitter
-            </a>
-          </li>
-        </ul>
+        <a rel="noopener noreferrer">
+          <p>
+            {' '}
+            • If you do not have account, <a href={'/signup'}>sign up here.</a>
+          </p>
+        </a>
 
         <p>
-          If you like JHipster, do not forget to give us a star on{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.tarkanbatar.com/" target="_blank" rel="noopener noreferrer">
+            <img src={'../../../content/images/portfolio.svg'} style={{ marginRight: '4px' }} />
+            Portfolio
+          </a>
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/tarkanbatar" target="_blank" rel="noopener noreferrer">
+            <img src={'../../../content/images/linkedin-logo.svg'} style={{ marginRight: '4px' }} />
+            LinkedIn
+          </a>
+        </p>
+        <p>
+          <a href="https://www.github.com/tarkanbatar" target="_blank" rel="noopener noreferrer">
+            <img src={'../../../content/images/github.svg'} style={{ marginRight: '4px' }} />
             GitHub
           </a>
-          !
+        </p>
+        <p>
+          <a href="http://www.twitter.com/tarkanbatar" target="_blank" rel="noopener noreferrer">
+            <img src={'../../../content/images/twitter-sign.svg'} style={{ marginRight: '4px' }} />
+            Twitter
+          </a>
+        </p>
+        <p>
+          <a href="https://www.instagram.com/tarkanbatar" target="_blank" rel="noopener noreferrer">
+            <img src={'../../../content/images/instagram-logo.svg'} style={{ marginRight: '4px' }} />
+            Instagram
+          </a>
         </p>
       </Col>
     </Row>

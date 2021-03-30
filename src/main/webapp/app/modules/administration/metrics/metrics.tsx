@@ -4,13 +4,12 @@ import { Button, Col, Row } from 'reactstrap';
 import {
   CacheMetrics,
   DatasourceMetrics,
+  EndpointsRequestsMetrics,
   GarbageCollectorMetrics,
   HttpRequestMetrics,
   JvmMemory,
   JvmThreads,
-  EndpointsRequestsMetrics,
   SystemMetrics,
-  Translate,
 } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

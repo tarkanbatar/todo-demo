@@ -5,11 +5,9 @@ import React from 'react';
 import { Col, Row } from 'reactstrap';
 
 const Footer = props => (
-  <div className="footer page-content">
-    <Row>
-      <Col md="12">
-        <p>Your footer</p>
-      </Col>
+  <div className="footer page-content" style={{ backgroundColor: '#004225' }}>
+    <Row style={{ marginTop: '16px' }}>
+      <Col></Col>
     </Row>
   </div>
 );

@@ -4,7 +4,7 @@ import { createMemoryHistory } from 'history';
 import { render } from '@testing-library/react';
 
 import { AUTHORITIES } from 'app/config/constants';
-import { PrivateRouteComponent, hasAnyAuthority } from './private-route';
+import { hasAnyAuthority, PrivateRouteComponent } from './private-route';
 
 const TestComp = () => <div>Test</div>;
 

@@ -6,7 +6,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Card } from 'reactstrap';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { hot } from 'react-hot-loader';
 
 import { IRootState } from 'app/shared/reducers';
