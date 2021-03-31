@@ -56,7 +56,7 @@ class RegisterModal extends React.Component<IRegisterModalProps> {
                 <AvField
                   name="passwordConfirm"
                   type="password"
-                  label="Password"
+                  label="Confirm Password"
                   placeholder="Confirm your password"
                   required
                   errorMessage="Password cannot be empty!"
