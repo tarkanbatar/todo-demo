@@ -13,8 +13,12 @@ const accountMenuItemsAuthenticated = (
 
 const accountMenuItems = (
   <>
-    <MenuItem id="login-item" icon="sign-in-alt" to="/login" data-cy="login">
-      Sign in
+    <MenuItem id="login-item" icon="cash-register" to="/login" data-cy="login">
+      Sign In
+    </MenuItem>
+
+    <MenuItem icon="registered" to="/register">
+      Sign Up
     </MenuItem>
   </>
 );

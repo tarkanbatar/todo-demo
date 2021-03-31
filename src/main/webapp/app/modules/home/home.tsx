@@ -36,7 +36,8 @@ export const Home = (props: IHomeProp) => {
             • If you do not have account, <a href={'/signup'}>sign up here.</a>
           </p>
         </a>
-
+        <br></br>
+        <br></br>
         <p>
           <a href="https://www.tarkanbatar.com/" target="_blank" rel="noopener noreferrer">
             <img src={'../../../content/images/portfolio.svg'} style={{ marginRight: '4px' }} />

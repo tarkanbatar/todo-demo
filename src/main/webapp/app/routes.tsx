@@ -5,6 +5,7 @@ import Loadable from 'react-loadable';
 import Login from 'app/modules/login/login';
 import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
+import Register from 'app/modules/register/register';
 import Entities from 'app/entities';
 import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
@@ -20,6 +21,7 @@ const Routes = () => {
   return (
     <div className="view-routes">
       <Switch>
+        <ErrorBoundaryRoute path="/register" component={Register} />
         <ErrorBoundaryRoute path="/login" component={Login} />
         <ErrorBoundaryRoute path="/logout" component={Logout} />
         <PrivateRoute path="/admin" component={Admin} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />

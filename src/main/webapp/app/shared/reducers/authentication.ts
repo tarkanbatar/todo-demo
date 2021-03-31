@@ -5,6 +5,7 @@ import { FAILURE, REQUEST, SUCCESS } from 'app/shared/reducers/action-type.util'
 
 export const ACTION_TYPES = {
   LOGIN: 'authentication/LOGIN',
+  REGISTER: 'authentication/REGISTER',
   GET_SESSION: 'authentication/GET_SESSION',
   LOGOUT: 'authentication/LOGOUT',
   CLEAR_AUTH: 'authentication/CLEAR_AUTH',
@@ -18,7 +19,10 @@ const initialState = {
   isAuthenticated: false,
   loginSuccess: false,
   loginError: false, // Errors returned from server side
+  registerSuccess: false,
+  registerError: false,
   showModalLogin: false,
+  showModalRegister: false,
   account: {} as any,
   errorMessage: (null as unknown) as string, // Errors returned from server side
   redirectMessage: (null as unknown) as string,
@@ -38,6 +42,14 @@ export default (state: AuthenticationState = initialState, action): Authenticati
       return {
         ...state,
         loading: true,
+      };
+    case REQUEST(ACTION_TYPES.REGISTER):
+      return {
+        ...state,
+        loading: false,
+        registerError: false,
+        showModalRegister: true,
+        registerSuccess: true,
       };
     case FAILURE(ACTION_TYPES.LOGIN):
       return {
@@ -121,6 +133,22 @@ export const login: (username: string, password: string, rememberMe?: boolean) =
     } else {
       Storage.session.set(AUTH_TOKEN_KEY, jwt);
     }
+  }
+  await dispatch(getSession());
+};
+
+export const register: (username: string, password: string, passwordConfirm: string) => void = (
+  username,
+  password,
+  passwordConfirm
+) => async (dispatch, getState) => {
+  const result = await dispatch({
+    type: ACTION_TYPES.REGISTER,
+    payload: axios.post('api/authenticate', { username, password, passwordConfirm }),
+  });
+  const bearerToken = result.value.headers.authorization;
+  if (bearerToken && bearerToken.slice(0, 7) === 'Bearer ') {
+    const jwt = bearerToken.slice(7, bearerToken.length);
   }
   await dispatch(getSession());
 };

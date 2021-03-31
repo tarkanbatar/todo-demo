@@ -41,14 +41,24 @@ describe('AccountMenu', () => {
   it('Renders a authenticated AccountMenu component', () => {
     const html = authenticatedWrapper();
 
-    expect(html).not.toContain('/login');
     expect(html).toContain('/logout');
+    expect(html).not.toContain('/login');
+    expect(html).not.toContain('/register');
+  });
+
+  it('Renders a authenticated AccountMenu component', () => {
+    const html = authenticatedWrapper();
+
+    expect(html).toContain('/register');
+    expect(html).not.toContain('/logout');
+    expect(html).not.toContain('/login');
   });
 
   it('Renders a guest AccountMenu component', () => {
     const html = guestWrapper();
 
     expect(html).toContain('/login');
+    expect(html).not.toContain('/register');
     expect(html).not.toContain('/logout');
   });
 });
