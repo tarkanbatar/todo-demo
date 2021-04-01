@@ -866,7 +866,7 @@
             <!--
                 Profile for applying IDE-specific configuration.
                 At the moment it configures MapStruct and Hibernate JPA Metamodel Generator, which you need when working
-                with DTOs and entity filtering.
+                with DTOs and todo.entity filtering.
             -->
             <id>IDE</id>
             <dependencies>

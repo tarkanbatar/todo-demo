@@ -62,7 +62,7 @@ describe('Header', () => {
     // Find AdminMenu component
     expect(html).toContain('admin-menu');
     // Find EntitiesMenu component
-    expect(html).toContain('entity-menu');
+    expect(html).toContain('todo.entity-menu');
     // Find AccountMenu component
     expect(html).toContain('account-menu');
     // Ribbon
@@ -77,7 +77,7 @@ describe('Header', () => {
     // Find AdminMenu component
     expect(html).toContain('admin-menu');
     // Find EntitiesMenu component
-    expect(html).toContain('entity-menu');
+    expect(html).toContain('todo.entity-menu');
     // Find AccountMenu component
     expect(html).toContain('account-menu');
     // No Ribbon
@@ -92,7 +92,7 @@ describe('Header', () => {
     // Not find AdminMenu component
     expect(html).not.toContain('admin-menu');
     // Find EntitiesMenu component
-    expect(html).toContain('entity-menu');
+    expect(html).toContain('todo.entity-menu');
     // Find AccountMenu component
     expect(html).toContain('account-menu');
   });
@@ -105,7 +105,7 @@ describe('Header', () => {
     // Not find AdminMenu component
     expect(html).not.toContain('admin-menu');
     // Not find EntitiesMenu component
-    expect(html).not.toContain('entity-menu');
+    expect(html).not.toContain('todo.entity-menu');
     // Find AccountMenu component
     expect(html).toContain('account-menu');
   });

@@ -33,7 +33,7 @@ export const Home = (props: IHomeProp) => {
         <a rel="noopener noreferrer">
           <p>
             {' '}
-            • If you do not have account, <a href={'/signup'}>sign up here.</a>
+            • If you do not have account, <a href={'/register'}>sign up here.</a>
           </p>
         </a>
         <br></br>
