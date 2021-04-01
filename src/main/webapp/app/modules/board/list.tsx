@@ -3,7 +3,18 @@ import './App.css';
 import { FormControl, Row, Nav, NavItem, Tab, Col, Button } from 'react-bootstrap';
 import Checkbox from 'react-bootstrap';
 
-class CreateListText extends React.Component {
+// TODO CHANGE NAME NAME INTERFACE NAME!
+interface IFuck {
+  data: null;
+  inputText: '';
+  inputItemText: '';
+  listEles: [];
+  selectedTodo: '';
+  listEleItems: [];
+  model: [];
+}
+
+class CreateListText extends React.Component<{}, IFuck> {
   constructor(props) {
     super(props);
 
@@ -66,16 +77,16 @@ class CreateListText extends React.Component {
               <Button size={'sm'} style={{ float: 'left' }} onClick={e => this._handleRemoveItem(i, j)}>
                 X
               </Button>
-              <Checkbox
-                inline={true}
-                checked={single.completed}
-                className="clearfix"
-                onChange={e => this._handleCheckboxChange(i, j)}
-                name={single.text}
-              >
-                {single.text}
-                {single.deadline}
-              </Checkbox>
+              {/*<Checkbox*/}
+              {/*  inline={true}*/}
+              {/*  checked={single.completed}*/}
+              {/*  className="clearfix"*/}
+              {/*  onChange={e => this._handleCheckboxChange(i, j)}*/}
+              {/*  name={single.text}*/}
+              {/*>*/}
+              {/*  {single.text}*/}
+              {/*  {single.deadline}*/}
+              {/*</Checkbox>*/}
             </Tab.Pane>
           </div>
         );
@@ -90,7 +101,7 @@ class CreateListText extends React.Component {
   };
 
   _todoClicked = e => {
-    let myText = '';
+    let myText;
     if (e.target.text != null) myText = e.target.text.substring(1);
     this.setState({
       selectedTodo: myText,
@@ -101,6 +112,7 @@ class CreateListText extends React.Component {
     if (e.key === 'Enter') {
       console.log('do validate');
 
+      // @ts-ignore
       fetch('http://localhost:9000/board?list_name=' + this.state.inputText, {
         method: 'GET',
         headers: {
@@ -126,6 +138,7 @@ class CreateListText extends React.Component {
 
   _handleItemInputKeyPress = e => {
     if (e.key === 'Enter') {
+      // @ts-ignore
       fetch('http://localhost:8080/add_item_to_board?list_name=' + this.state.selectedTodo + '&item_text=' + this.state.inputItemText, {
         method: 'GET',
         headers: {
@@ -164,13 +177,18 @@ class CreateListText extends React.Component {
   };
 
   _handleCheckboxChange = (i, j) => {
+    // @ts-ignore
     let temp = Object.assign({}, this.state.data);
+    // @ts-ignore
     temp[i].items[j].completed = !temp[i].items[j].completed;
     console.log('degisti');
+    // @ts-ignore
     console.log(temp[i].items[j].text);
 
+    // @ts-ignore
     console.log(this.state.data);
 
+    // @ts-ignore
     fetch('http://localhost:9000/change_item_status?list_name=' + this.state.selectedTodo + '&item_text=' + temp[i].items[j].text, {
       method: 'GET',
       headers: {
@@ -188,35 +206,37 @@ class CreateListText extends React.Component {
         this.setState({
           data: temp,
         });
+        // @ts-ignore
         console.log(this.state.listEleItems);
       })
       .catch(error => console.error(error));
   };
 
   _handleRemoveItem = (i, j) => {
-    fetch(
-      'http://localhost:9000/remove_todo_list_item?list_name=' + this.state.selectedTodo + '&item_text=' + this.state.data[i].items[j].text,
-      {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      }
-    )
-      .then(resp => {
-        return resp.json();
-      })
-      .then(data => {
-        this._generateListEles(data);
-        this._generateListEleItems(data);
-
-        this.setState({
-          data: data,
-        });
-        console.log(this.state.listEleItems);
-      })
-      .catch(error => console.error(error));
+    // fetch(
+    //   'http://localhost:9000/remove_todo_list_item?list_name=' + this.state.selectedTodo + '&item_text=' + this.state.data[i].items[j].text,
+    //   {
+    //     method: 'GET',
+    //     headers: {
+    //       Accept: 'application/json',
+    //       'Content-Type': 'application/json'
+    //     }
+    //   }
+    // )
+    //   .then(resp => {
+    //     return resp.json();
+    //   })
+    //   .then(data => {
+    //     this._generateListEles(data);
+    //     this._generateListEleItems(data);
+    //
+    //     this.setState({
+    //       data: data
+    //     });
+    //     // @ts-ignore
+    //     console.log(this.state.listEleItems);
+    //   })
+    //   .catch(error => console.error(error));
   };
 
   _handleRemoveTODOList = name => {

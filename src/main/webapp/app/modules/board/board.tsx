@@ -4,12 +4,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Alert, Col, Row } from 'reactstrap';
-import { FormControl } from 'react-bootstrap';
-import { Nav } from 'react-bootstrap';
-import { NavItem } from 'react-bootstrap';
-import { Tab } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-import Checkbox from 'react-bootstrap';
+import CreateListText from 'app/modules/board/list';
+import { Button, FormText } from 'react-bootstrap';
 
 export type IHomeProp = StateProps;
 
@@ -18,6 +14,7 @@ export const Board = (props: IHomeProp) => {
 
   return (
     <Row>
+      <Col></Col>
       <Col md="9">
         {account && account.login ? (
           <div>
@@ -32,8 +29,10 @@ export const Board = (props: IHomeProp) => {
         <p className="lead">Add new items to your list from below:</p>
         <a rel="noopener noreferrer"></a>
         <br></br>
-        <br></br>
+        <Button>ADD</Button>
+        <input type="text" style={{ marginLeft: '8px' }} />
       </Col>
+      <Col></Col>
     </Row>
   );
 };
