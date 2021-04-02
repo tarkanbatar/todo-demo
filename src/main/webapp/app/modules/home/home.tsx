@@ -31,10 +31,7 @@ export const Home = (props: IHomeProp) => {
           </div>
         )}
         <a rel="noopener noreferrer">
-          <p>
-            {' '}
-            • If you do not have account, <a href={'/register'}>sign up here.</a>
-          </p>
+          <p> • Username= admin , Password= admin</p>
         </a>
         <br></br>
         <br></br>
