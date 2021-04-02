@@ -16,6 +16,5 @@
        ... ignored content ...
        // CHECKSTYLE:ON
     -->
-    <!-- trash-->
     <module name="SuppressWithPlainTextCommentFilter"/>
 </module>

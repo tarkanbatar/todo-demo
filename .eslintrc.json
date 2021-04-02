@@ -51,7 +51,6 @@
         }
       }
     ],
-    //trash
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/unbound-method": "off",

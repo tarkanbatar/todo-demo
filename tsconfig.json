@@ -10,7 +10,6 @@
     "removeComments": false,
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
-    "moduleTargetDir": false,
     "outDir": "target/classes/static/app",
     "lib": ["dom", "es2015", "es2016", "es2017"],
     "types": ["jest", "webpack-env"],

@@ -37,8 +37,8 @@
     "nativeLanguage": "en",
     "packageFolder": "todo",
     "jwtSecretKey": "MGNjNzM4ZWM2ZDllYWU4YTNlMzk4MDA4NjFmYTMzYzg4YjE5MWVlZWY4N2JkNDYwNDU4MjE5YWYzMmVkZDI5ZTZhYzJmZjY4ZjE2ZDM2Nzc2ZjNlMTFlZWEzNDEzYzFmOWU3Yzk0MDI1YzE0MGY2MzVhODQyZWU1MmU1YmM1NTM=",
-    "prodDatabaseType": "no",
     "devDatabaseType": "no",
+    "prodDatabaseType": "no",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en", "fr"]
