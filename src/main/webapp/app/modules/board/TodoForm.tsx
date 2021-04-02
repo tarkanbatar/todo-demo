@@ -4,9 +4,7 @@ import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Alert, Col, Row } from 'reactstrap';
-import CreateListText from 'app/modules/board/list';
 import { Button, Form, FormText } from 'react-bootstrap';
-import { Simulate } from 'react-dom/test-utils';
 
 export type IHomeProp = StateProps;
 
@@ -24,6 +22,7 @@ export const TodoForm = props => {
       id: Math.floor(Math.random() * 1000),
       text: inputData,
     });
+    setInput('');
   };
 
   return (

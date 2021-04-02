@@ -23,10 +23,24 @@ function TodoListBoard() {
     setTodos(updatedTodos);
   };
 
+  const updateTodo = (todoId, newValue) => {
+    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+      return;
+    }
+
+    setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
+  };
+
+  const removeTodo = id => {
+    const removedArr = [...todos].filter(todo => todo.id !== id);
+
+    setTodos(removedArr);
+  };
+
   return (
     <div>
       <TodoForm onSubmit={addTodo} />
-      <Todo todos={todos} completeTodo={completeTodo} />
+      <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} />
     </div>
   );
 }
