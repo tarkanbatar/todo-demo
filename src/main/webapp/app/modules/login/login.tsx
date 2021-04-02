@@ -22,7 +22,7 @@ export const Login = (props: ILoginProps) => {
     props.history.push('/');
   };
 
-  const { location, isAuthenticated } = props;
+  const { location, isAuthenticated = true } = props;
   const { from } = (location.state as any) || { from: { pathname: '/home', search: location.search } };
   if (isAuthenticated) {
     return <Redirect to={from} />;

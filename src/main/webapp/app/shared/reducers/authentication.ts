@@ -51,6 +51,14 @@ export default (state: AuthenticationState = initialState, action): Authenticati
         showModalRegister: true,
         registerSuccess: true,
       };
+    case SUCCESS(ACTION_TYPES.REGISTER):
+      return {
+        ...state,
+        loading: false,
+        registerError: false,
+        showModalLogin: false,
+        registerSuccess: true,
+      };
     case FAILURE(ACTION_TYPES.LOGIN):
       return {
         ...initialState,
