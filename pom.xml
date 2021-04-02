@@ -19,7 +19,7 @@
         <!-- jhipster-needle-maven-plugin-repository -->
     </pluginRepositories>
 
-    <!-- jhipster-needle-distribution-management -->
+    <!-- jhipster-needle-di stribution-management -->
 
     <properties>
         <!-- Build properties -->

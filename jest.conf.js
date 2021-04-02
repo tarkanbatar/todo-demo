@@ -37,7 +37,7 @@ function mapTypescriptAliasToJestAlias(alias = {}) {
       if (value.length) {
         return true;
       }
-      return false;
+      return false; //trash
     })
     .map(([key, value]) => {
       // if Typescript alias ends with /* then in Jest:
