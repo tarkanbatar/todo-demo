@@ -30,7 +30,7 @@ class RegisterModal extends React.Component<IRegisterModalProps> {
               <Col md="12">
                 {loginError ? (
                   <Alert color="danger" data-cy="loginError">
-                    <strong>Failed to sign in!</strong> Please check your credentials and try again.
+                    <strong>Register failed!</strong> Please check your credentials and try again.
                   </Alert>
                 ) : null}
               </Col>
@@ -71,7 +71,7 @@ class RegisterModal extends React.Component<IRegisterModalProps> {
               Cancel
             </Button>{' '}
             <Button color="primary" type="submit" data-cy="submit">
-              Sign in
+              Sign Up
             </Button>
           </ModalFooter>
         </AvForm>
