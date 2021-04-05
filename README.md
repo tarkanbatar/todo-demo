@@ -25,6 +25,7 @@ Before you build this project, you must install and configure the following depe
       ```
 
 - The `npm run` command will list all of the scripts available to run for this project.
+- Default port : 8080, so you can access the project from your browser with this address -> localhost:8080
 
 ## Testing
 
